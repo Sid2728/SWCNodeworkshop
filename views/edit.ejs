@@ -1,0 +1,28 @@
+<%- include("partials/header") -%>
+
+
+<h1>Edit</h1>
+
+
+<form method="POST" action="/edit/:id">
+  <div class="form-group">
+    <label>Author</label>
+    <input type="text"  name="Author" class="form-control" value="<%=blogs.author%>" >
+  
+  </div>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text"  name="title" class="form-control" value="<%=blogs.title%>">
+    
+    </div>
+    <div class="form-group">
+      <label >Blog</label>
+      <input type="text"  name="blog" class="form-control" value="<%=blogs.content%>">
+    </div>
+   <button type="submit" class="btn btn-primary">Update</button>
+    
+  </form>
+
+
+<%- include("partials/footer") -%>
+

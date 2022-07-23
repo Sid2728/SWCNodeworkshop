@@ -1,0 +1,40 @@
+
+<html lang="en">
+    <body>
+    <%- include('partials/header') -%>
+
+    <div class="blogheader">
+        <h1>Blogs:</h1>
+        <a href="/compose" class="composebttn">Compose</a>
+    </div>
+    
+    <div class="blogs">
+        <% blogs.forEach(function(Blog) { %>
+ 
+        <div class="blogcontent">
+          <div class="homebttn"> 
+            <form action="/home/<%= Blog._id %>?_method=DELETE" method="GET" class="d-inline one">
+            <button type="submit" class="btn btn delete">Delete</button>
+          </form>
+          <form action="/edit/<%= Blog._id %>" method="GET" class="d-inline two">
+            <a href="/edit"> <button type="submit" class="btn btn edit">Edit</button></a>
+           
+          </form>
+        </div>
+         
+           <h1 class="title"> <%= Blog.title %></h1>
+            <p class="content" ><%= Blog.content %></p>
+            <div class="author">
+               <p>~ <%= Blog.author %></p>
+            </div>
+        </div>
+        
+        
+        <% }); %>
+    </div>
+    
+    
+    <%- include('partials/footer') -%>
+     
+</body>
+</html>
